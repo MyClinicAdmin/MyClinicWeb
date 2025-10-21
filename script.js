@@ -62,6 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
       tempImg.src = newSrc;
     }
   }, 500); // Small delay to ensure DOM is ready
+
+  // Insert current year wherever .current-year exists
+  const currentYearEls = document.querySelectorAll('.current-year');
+  if (currentYearEls && currentYearEls.length) {
+    const y = new Date().getFullYear();
+    currentYearEls.forEach(el => { el.textContent = y; });
+  }
 });
 
 // Theme Toggle
