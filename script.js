@@ -260,93 +260,50 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
-  contactForm.addEventListener("submit", function(e) {
+  contactForm.addEventListener("submit", async function(e) {
     e.preventDefault();
-    
-    try {
-      // Get form data
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
 
-      // Validação dos campos obrigatórios
-      const errors = [];
-      
-      if (!data.name || data.name.trim().length < 2) {
-        errors.push('Nome é obrigatório (mínimo 2 caracteres)');
-      }
-      
-      if (!data.email || data.email.trim().length === 0) {
-        errors.push('Email é obrigatório');
-      } else if (!data.email.includes('@') || !data.email.includes('.')) {
-        errors.push('Email deve ter formato válido');
-      }
-      
-      if (!data.phone || data.phone.trim().length < 7) {
-        errors.push('Telefone é obrigatório (mínimo 7 dígitos)');
-      }
-      
-      if (!data.service || data.service.trim().length === 0) {
-        errors.push('Selecione um serviço');
-      }
+    // Collect form data
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
 
-      // Mostrar erros se existirem
-      if (errors.length > 0) {
-        showNotification(
-          `<strong>❌ Erro no Formulário</strong><br><br>${errors.join('<br>')}<br><br><small>Por favor, corrija os campos acima e tente novamente.</small>`,
-          'error',
-          6000
-        );
-        return;
-      }
+    // Run local validation (uses validateFormData)
+    const validation = validateFormData(data);
+    if (!validation.isValid) {
+      showNotification(validation.message, 'error', 6000);
+      return;
+    }
 
-      // Simular processamento (loading state)
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitButton.textContent;
-      submitButton.textContent = 'Enviando...';
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitButton ? submitButton.textContent : 'Enviar Pedido';
+    if (submitButton) {
+      submitButton.textContent = getLoadingMessage();
       submitButton.disabled = true;
+    }
 
-      // Simular delay da API
-      setTimeout(() => {
-        // Mostrar notificação de sucesso
-        showNotification(
-          `<strong>✅ Consulta Agendada com Sucesso!</strong><br><br>
-           Obrigado por escolher a MyClinic! Recebemos o seu pedido de marcação e entraremos em contacto consigo nas próximas 24 horas para confirmar a sua consulta.<br><br>
-           <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); font-size: 14px;">
-             <strong>📞 Contactos MyClinic:</strong><br>
-             +244 928 616 519 • +244 933 000 331<br>
-             📧 geral@myclinic.ao<br>
-             📍 Largo Serpa Pinto & Shopping Fortaleza
-           </div>`,
-          'success',
-          8000
-        );
-        
-        // Resetar formulário
+    try {
+      const resp = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      let result = {};
+      try { result = await resp.json(); } catch (e) { /* ignore */ }
+
+      if (resp.ok && result.success) {
+        showNotification(getSuccessMessage(data), 'success', 8000);
         contactForm.reset();
-        
-        // Restaurar botão
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      }, 1500);
-    
+      } else {
+        const msg = (result && result.message) ? result.message : getErrorMessage();
+        showNotification(msg, 'error', 7000);
+      }
     } catch (error) {
-      // Mostrar erro via toast notification
-      showNotification(
-        `<strong>❌ Erro Inesperado</strong><br><br>
-         Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente ou contacte-nos diretamente.<br><br>
-         <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); font-size: 14px;">
-           <strong>📞 Contactos MyClinic:</strong><br>
-           +244 928 616 519 • +244 933 000 331<br>
-           📧 geral@myclinic.ao
-         </div>`,
-        'error',
-        6000
-      );
-      
-      // Restaurar botão em caso de erro
-      const submitButton = contactForm.querySelector('button[type="submit"]');
+      console.error('Error sending to /api/send-email:', error);
+      showNotification(getErrorMessage(), 'error', 7000);
+    } finally {
       if (submitButton) {
-        submitButton.textContent = 'Enviar Pedido';
+        submitButton.textContent = originalText || 'Enviar Pedido';
         submitButton.disabled = false;
       }
     }

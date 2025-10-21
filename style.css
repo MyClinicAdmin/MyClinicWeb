@@ -2,8 +2,8 @@
    ===== 1. DEFINIÇÃO DE VARIÁVEIS GLOBAIS =====
    ============================================= */
 :root {
-  --primary-color: #71b7cf;
-  --primary-dark: #5a9cb8;
+  --primary-color: #0066cc;
+  --primary-dark: #005bb3;
   --secondary-color: #3e4a59;
   --text-primary: #333333;
   --text-secondary: #666666;
@@ -2178,74 +2178,75 @@ body.legal-page.dark-mode {
   background-color: #1a1a1a;
 }
 
+
 .legal-content {
-  max-width: 800px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: var(--spacing-2xl) var(--spacing-lg);
-  background: var(--bg-primary);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: transparent; /* let page background show through like index */
+  border-radius: 8px;
+  box-shadow: none;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .legal-content h1 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
   color: var(--text-primary);
-  margin-bottom: var(--spacing-md);
-  text-align: center;
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: var(--spacing-md);
+  margin: 0 0 var(--spacing-sm) 0;
+  text-align: left;
+  border: none;
+  padding: 0;
 }
 
 .legal-content .last-updated {
-  text-align: center;
+  text-align: left;
   color: var(--text-secondary);
   font-style: italic;
-  margin-bottom: var(--spacing-xl);
+  margin: 0 0 var(--spacing-md) 0;
   font-size: 0.95rem;
 }
 
 .legal-content section {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 .legal-content h2 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--primary-color);
-  margin-bottom: var(--spacing-md);
-  margin-top: var(--spacing-lg);
-  border-left: 4px solid var(--primary-color);
-  padding-left: var(--spacing-md);
+  margin-bottom: calc(var(--spacing-sm) / 2);
+  margin-top: var(--spacing-md);
+  border-left: 3px solid var(--primary-color);
+  padding-left: calc(var(--spacing-sm) - 2px);
 }
 
 .legal-content h3 {
   font-family: var(--font-primary);
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   color: var(--text-primary);
   font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
 }
 
 .legal-content p {
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--text-primary);
-  margin-bottom: var(--spacing-md);
-  text-align: justify;
+  margin-bottom: calc(var(--spacing-sm) / 1.2);
+  text-align: left;
 }
 
 .legal-content ul {
-  margin-left: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
+  margin-left: calc(var(--spacing-md));
+  margin-bottom: calc(var(--spacing-sm) / 1.2);
 }
 
 .legal-content li {
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--text-primary);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: calc(var(--spacing-xs) / 1.2);
 }
 
 .legal-content a {
