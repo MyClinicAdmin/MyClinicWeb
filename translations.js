@@ -27,10 +27,11 @@ const translations = {
     // About Section
     labelAbout: "Sobre Nós",
     aboutTitle: "A Cuidar da Saúde do Seu Sorriso",
-    aboutText1:
-      "Com 15 anos de atividade, a My Clinic nasceu com o objetivo de garantir a todos os angolanos o direito fundamental de sorrir.",
-    aboutText2:
-      "Hoje, com consultório localizado no Shopping Fortaleza em Luanda, oferecemos serviços médicos de excelência. Nossa equipe é composta por mais de 20 profissionais dedicados a proporcionar um atendimento único e de alta qualidade.",
+    aboutText1: "Fundada em 2008, a DentalClinic – Consultório Dentário, LDA conta com mais de 17 anos de experiência dedicados à promoção da saúde oral e ao bem-estar dos seus pacientes. Ao longo da sua trajetória, tem-se afirmado como uma referência no setor, combinando competência técnica, atendimento humanizado e o uso de tecnologia de ponta.",
+    aboutText2: "Com uma equipa de 20 profissionais altamente qualificados nas diversas especialidades da medicina dentária, a DentalClinic oferece um atendimento completo, que abrange desde a prevenção até aos tratamentos mais avançados. O compromisso com a excelência clínica, a ética profissional e o respeito pelo paciente tem sido a base do seu sucesso e credibilidade ao longo dos anos.",
+    aboutText3: "Em Outubro de 2023, num processo de evolução e modernização da sua identidade, a clínica passou a operar sob a marca My Clinic, localizada no Shopping Fortaleza, em Luanda. Esta mudança representa um novo capítulo na história da DentalClinic — uma fase marcada pela inovação, rejuvenescimento da marca e pela aposta em experiências mais próximas e personalizadas para cada paciente.",
+    aboutText4: "Hoje, a My Clinic mantém o mesmo compromisso que deu origem à DentalClinic: oferecer a todos o direito fundamental de sorrir, com confiança, saúde e qualidade de vida.",
+
     badgeYears: "Anos de Excelência",
     feature1: "Equipa de especialistas altamente qualificados",
     feature2: "Tecnologia de última geração",
@@ -82,12 +83,14 @@ const translations = {
     testimonialsTitle: "O Que Nossos Pacientes Dizem",
     
     // Carousel Reviews
-    review1Text: "Excelente atendimento! Os profissionais são muito atenciosos e o ambiente é muito acolhedor. Recomendo!",
-    review2Text: "Fiz um tratamento de canal e fiquei impressionado com a qualidade do serviço. Sem dor e muito profissional.",
-    review3Text: "A MyClinic mudou minha vida! Agora tenho um sorriso perfeito. Obrigado por todo o cuidado.",
-    review4Text: "Atendimento de primeira qualidade. Equipamentos modernos e uma equipe muito preparada.",
-    review5Text: "Já sou paciente há mais de 5 anos. Sempre fui bem atendido e os resultados são excepcionais.",
-    review6Text: "Profissionais competentes e cuidadosos. O ambiente é limpo e organizado. Muito satisfeito!",
+    review1Text: "Parabéns pelo trabalho de excelência! Sente-se que se dedicam para fazer do país um lugar melhor. Recomendo todos os tratamentos na My Clinic. Excelentes profissionais e de qualidade.",
+    review2Text: "Sou paciente da My Clinic há vários anos e sempre fui muito bem atendida. A equipa é extremamente simpática e profissional, sempre pronta a esclarecer todas as dúvidas. O ambiente é limpo, acolhedor e transmite confiança. Recomendo a 100%! — Maria da Silva",
+    review3Text: "Excelente atendimento! Fui muito bem recebido desde a receção até ao final do tratamento. A Dra. foi muito atenciosa e explicou cada etapa do procedimento. Sem dúvida, uma das melhores clínicas de Luanda. — Joaquim António",
+    review4Text: "A My Clinic superou as minhas expectativas. Profissionais competentes, instalações modernas e um atendimento humanizado. Sinto-me confiante e satisfeita com os resultados obtidos. — Carla Mendes",
+    review5Text: "Agradeço a toda a equipa da My Clinic pela paciência, dedicação e carinho. Perdi o medo de ir ao dentista graças a vocês. Hoje, volto a sorrir com confiança! — Pedro Ferreira",
+    review6Text: "Gostei muito da experiência na My Clinic. Desde a marcação até o atendimento, tudo foi feito com profissionalismo e simpatia. Recomendo vivamente a todos que procuram um bom atendimento dentário em Luanda. — Sandra Lopes",
+    review7Text: "O meu tratamento foi um sucesso! Equipa excelente, atendimento rápido e eficaz. Voltarei sempre que precisar e recomendarei a familiares e amigos. — Ana Paula",
+
     clientMyClinic: "Cliente MyClinic",
 
     // Original testimonials (for compatibility)
@@ -336,27 +339,20 @@ const translations = {
     testimonialsTitle: "What Our Patients Say",
     
     // Carousel Reviews
-    review1Text: "Excellent service! The professionals are very attentive and the environment is very welcoming. I recommend!",
-    review2Text: "I had a root canal treatment and was impressed with the quality of service. Painless and very professional.",
-    review3Text: "MyClinic changed my life! Now I have a perfect smile. Thank you for all the care.",
-    review4Text: "First-class service. Modern equipment and a very prepared team.",
-    review5Text: "I've been a patient for over 5 years. I've always been well attended and the results are exceptional.",
-    review6Text: "Competent and careful professionals. The environment is clean and organized. Very satisfied!",
+    aboutText1: "Founded in 2008, DentalClinic – Consultório Dentário, LDA has over 17 years of experience dedicated to promoting oral health and patient well-being. Throughout its journey, it has become a reference in the sector, combining technical competence, humanized care, and the use of cutting-edge technology.",
+    aboutText2: "With a team of 20 highly qualified professionals in various dental specialties, DentalClinic provides comprehensive care — from prevention to the most advanced treatments. The commitment to clinical excellence, professional ethics, and respect for patients has been the foundation of its success and credibility over the years.",
+    aboutText3: "In October 2023, as part of a process of evolution and modernization of its identity, the clinic began operating under the brand My Clinic, located at Shopping Fortaleza in Luanda. This change represents a new chapter in DentalClinic’s history — a phase marked by innovation, brand rejuvenation, and a focus on closer, more personalized experiences for each patient.",
+    aboutText4: "Today, My Clinic maintains the same commitment that gave rise to DentalClinic: to offer everyone the fundamental right to smile, with confidence, health, and quality of life.",
     clientMyClinic: "MyClinic Client",
 
     // Original testimonials (for compatibility)
-    testimonial1Text:
-      "I was very afraid of dentists until I met My Clinic. They offered me sedation options that made the treatment much calmer. Now, I can take care of my oral health without anxiety.",
-    testimonial1Name: "Maria Nhunga",
-    testimonial1Role: "Dental Patient",
-    testimonial2Text:
-      "The service at My Clinic exceeded all my expectations. I was attended quickly during an emergency and was impressed with the professionalism and attention to detail. Now, I do all my regular appointments here.",
-    testimonial2Name: "João Mavinga",
-    testimonial2Role: "Dental Patient",
-    testimonial3Text:
-      "The My Clinic team is exceptional. From reception to treatment, everything was perfect. I recommend it to everyone looking for quality service and professionalism.",
-    testimonial3Name: "Ana Costa",
-    testimonial3Role: "Dental Patient",
+    review1Text: "Congratulations on the excellent work! You can truly feel the dedication to making the country a better place. I recommend all treatments at My Clinic — excellent and professional service.",
+    review2Text: "I have been a patient at My Clinic for several years and have always been very well attended. The team is extremely friendly and professional, always ready to clarify any doubts. The environment is clean, welcoming, and conveys trust. I highly recommend it! — Maria da Silva",
+    review3Text: "Excellent service! I was warmly received from reception to the end of the treatment. The doctor was very attentive and explained every step of the procedure. Without a doubt, one of the best clinics in Luanda. — Joaquim António",
+    review4Text: "My Clinic exceeded my expectations. Competent professionals, modern facilities, and humanized care. I feel confident and satisfied with the results. — Carla Mendes",
+    review5Text: "Many thanks to the entire My Clinic team for their patience, dedication, and care. I lost my fear of going to the dentist thanks to you. Today, I smile again with confidence! — Pedro Ferreira",
+    review6Text: "I really enjoyed my experience at My Clinic. From scheduling to the actual service, everything was handled with professionalism and kindness. Highly recommended for anyone seeking great dental care in Luanda. — Sandra Lopes",
+    review7Text: "My treatment was a success! Excellent team, fast and efficient service. I will return whenever needed and will recommend it to family and friends. — Ana Paula",
 
     // Contact Section
     labelContact: "Contact",
@@ -535,10 +531,10 @@ const translations = {
     // About Section
     labelAbout: "私たちについて",
     aboutTitle: "あなたの笑顔の健康を守ります",
-    aboutText1:
-      "15年の活動を経て、マイクリニックはすべてのアンゴラ人が笑顔になる権利を守るために誕生しました。",
-    aboutText2:
-      "現在、ルアンダのショッピング・フォルタレザに診療所があり、優れた医療サービスを提供しています。20名以上の専門家が、ユニークで高品質なケアを提供するために尽力しています。",
+    aboutText1: "2008年に設立されたデンタルクリニック（DentalClinic – Consultório Dentário, LDA）は、17年以上にわたり、患者様の口腔の健康と幸福の促進に専念してきました。これまでの歩みの中で、技術的な専門性、人間味あふれるケア、そして最先端技術の活用を兼ね備えた歯科医療のリーダーとして認知されています。",
+    aboutText2: "20名の高度に資格を持つ専門家から成るチームが、予防から高度な治療まで包括的なケアを提供します。臨床の卓越性、職業倫理、患者様への敬意を大切にし、長年にわたって信頼と実績を築いてきました。",
+    aboutText3: "2023年10月、ブランドの進化と近代化の一環として、クリニックはルアンダのショッピング・フォルタレザに位置する「マイクリニック（My Clinic）」として再出発しました。この変化は、革新、ブランドの若返り、そして患者様一人ひとりへのよりパーソナルな体験を重視する新たな章の始まりです。",
+    aboutText4: "今日、マイクリニックはデンタルクリニック創設当初からの理念を守り続けています。それは「すべての人に、自信と健康、そして生活の質を高める笑顔を提供すること」です。",
     badgeYears: "卓越の年数",
     feature1: "高度な専門家チーム",
     feature2: "最先端技術",
@@ -588,12 +584,13 @@ const translations = {
     testimonialsTitle: "患者様の声",
     
     // Carousel Reviews
-    review1Text: "素晴らしいサービス！スタッフはとても親切で、環境もとても居心地が良いです。おすすめします！",
-    review2Text: "根管治療を受けましたが、サービスの質に感動しました。痛みもなく、とてもプロフェッショナルでした。",
-    review3Text: "マイクリニックが私の人生を変えてくれました！今では完璧な笑顔を手に入れました。すべてのケアに感謝します。",
-    review4Text: "一流のサービス。最新の設備と非常に優秀なチーム。",
-    review5Text: "5年以上患者として通っています。いつも丁寧に対応していただき、結果も素晴らしいです。",
-    review6Text: "有能で丁寧なプロフェッショナル。環境も清潔で整理されています。とても満足しています！",
+    review1Text: "素晴らしい仕事におめでとうございます！国をより良くしようとする献身が伝わってきます。マイクリニックのすべての治療をおすすめします。プロフェッショナルで高品質です。",
+    review2Text: "数年前からマイクリニックの患者ですが、いつも丁寧に対応していただいています。スタッフはとても親切で専門的、疑問にも丁寧に答えてくれます。清潔で居心地の良い環境で、信頼できます。100％おすすめします！— マリア・ダ・シルバ",
+    review3Text: "素晴らしい対応でした！受付から治療の最後までとても丁寧でした。医師は一つひとつのステップを丁寧に説明してくれました。ルアンダで最高のクリニックの一つです。— ジョアキン・アントニオ",
+    review4Text: "マイクリニックは私の期待を超えました。優秀な専門家、近代的な設備、そして人間味のある対応。結果にとても満足しています。— カルラ・メンデス",
+    review5Text: "マイクリニックのチーム全員に感謝します。親切で思いやりのある対応のおかげで、歯医者への恐怖がなくなりました。今では自信を持って笑えるようになりました！— ペドロ・フェレイラ",
+    review6Text: "マイクリニックでの体験はとても良かったです。予約から診療まで、すべてがプロフェッショナルで親切でした。ルアンダで良い歯科治療を探している方に強くおすすめします。— サンドラ・ロペス",
+    review7Text: "私の治療は大成功でした！優秀なチーム、迅速で効率的な対応。今後も必要な時には通い続け、家族や友人にも紹介します。— アナ・パウラ",
     clientMyClinic: "マイクリニック患者",
 
     // Original testimonials (for compatibility)

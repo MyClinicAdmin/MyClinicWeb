@@ -149,7 +149,7 @@ async function handler(req, res) {
 
   try {
     // Validar se as variáveis de ambiente estão configuradas
-    if (!process.env.SENDGRID_API_KEY || !process.env.CLINIC_EMAIL) {
+    if (!process.env.SENDGRID_API_KEY || !process.env.CLINIC_EMAIL || !process.env.CLINIC_EMAIL2) {
       return res.status(500).json({
         success: false,
         message:
@@ -190,7 +190,7 @@ async function handler(req, res) {
 
     // Configurar email para a clínica
     const clinicMsg = {
-      to: process.env.CLINIC_EMAIL, // Email da clínica
+      to: [process.env.CLINIC_EMAIL, process.env.CLINIC_EMAIL2], // Emails da clínica
       from: {
         email: process.env.FROM_EMAIL || "noreply@myclinic.ao",
         name: "MyClinic Angola - Website",
