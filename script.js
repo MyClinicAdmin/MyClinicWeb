@@ -261,9 +261,11 @@ function getValidationMessage(key) {
 
 // Contact Form Handling with API Integration
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('[CONTACT] DOM loaded: initializing contact form handler');
   const contactForm = document.getElementById("contactForm");
   
   if (!contactForm) {
+    console.log('[CONTACT] contactForm not found on this page');
     return;
   }
 
@@ -273,13 +275,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Collect form data
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData);
+    console.log('[CONTACT] Submit clicked. Collected data:', data);
 
-    // Run local validation (uses validateFormData)
-    const validation = validateFormData(data);
-    if (!validation.isValid) {
-      showNotification(validation.message, 'error', 6000);
-      return;
-    }
+    // Run local validation (uses validateFormData) - for testes, NÃO bloqueia
+    // const validation = validateFormData(data);
+    // if (!validation.isValid) {
+    //   console.log('[CONTACT] Validation failed (continuing for test):', validation.message);
+    //   // Em testes, apenas mostramos a notificação mas seguimos com o envio
+    //   showNotification(validation.message, 'warning', 5000);
+    // } else {
+    //   console.log('[CONTACT] Validation OK');
+    // }
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalText = submitButton ? submitButton.textContent : 'Enviar Pedido';
@@ -289,14 +295,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     try {
-      const resp = await fetch('/api/send-email', {
+      const endpoint = '/api/send-email';
+      const resp = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
       let result = {};
-      try { result = await resp.json(); } catch (e) { /* ignore */ }
+      try { result = await resp.json(); } catch (e) {}
 
       if (resp.ok && result.success) {
         showNotification(getSuccessMessage(data), 'success', 8000);
@@ -306,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showNotification(msg, 'error', 7000);
       }
     } catch (error) {
-      console.error('Error sending to /api/send-email:', error);
+      console.log('[CONTACT] Fetch error to /api/send-email:', error);
       showNotification(getErrorMessage(), 'error', 7000);
     } finally {
       if (submitButton) {

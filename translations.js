@@ -252,9 +252,9 @@ const translations = {
     termsSection11Text: "Estes Termos de Uso são regidos pelas leis brasileiras. Qualquer disputa será resolvida nos tribunais competentes de São Paulo, SP.",
     termsSection12Title: "12. Contato",
     termsSection12Text: "Para questões sobre estes Termos de Uso, entre em contato:",
-    termsSection12Item1: "E-mail: contato@myclinic.com",
-    termsSection12Item2: "Telefone: +55 (11) 1234-5678",
-    termsSection12Item3: "Endereço: Rua Example, 123 - São Paulo, SP",
+  termsSection12Item1: "E-mail: geral@myclinic.ao",
+  termsSection12Item2: "Telefone: +244 928 616 519",
+  termsSection12Item3: "Endereço: Shopping Fortaleza - Piso 2",
   },
 
   en: {
@@ -499,9 +499,9 @@ const translations = {
     termsSection11Text: "These Terms of Use are governed by Brazilian law. Any disputes will be resolved in the competent courts of São Paulo, SP.",
     termsSection12Title: "12. Contact",
     termsSection12Text: "For questions about these Terms of Use, contact us:",
-    termsSection12Item1: "Email: contact@myclinic.com",
-    termsSection12Item2: "Phone: +55 (11) 1234-5678",
-    termsSection12Item3: "Address: Example Street, 123 - São Paulo, SP",
+  termsSection12Item1: "E-mail: geral@myclinic.ao",
+  termsSection12Item2: "Telefone: +244 928 616 519",
+  termsSection12Item3: "Endereço: Shopping Fortaleza - Piso 2",
   },
 
   jp: {
@@ -751,9 +751,9 @@ const translations = {
     termsSection11Text: "この利用規約はブラジル法に準拠します。いかなる紛争もサンパウロ州の管轄裁判所で解決されます。",
     termsSection12Title: "12. お問い合わせ",
     termsSection12Text: "この利用規約に関するご質問は、以下までご連絡ください：",
-    termsSection12Item1: "メール: contact@myclinic.com",
-    termsSection12Item2: "電話: +55 (11) 1234-5678",
-    termsSection12Item3: "住所: Example Street, 123 - São Paulo, SP",
+  termsSection12Item1: "E-mail: geral@myclinic.ao",
+  termsSection12Item2: "Telefone: +244 928 616 519",
+  termsSection12Item3: "Endereço: Shopping Fortaleza - Piso 2",
   },
 };
 

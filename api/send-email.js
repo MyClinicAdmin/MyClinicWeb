@@ -1,7 +1,9 @@
 const sgMail = require("@sendgrid/mail");
 
-// Configurar SendGrid API Key
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// Configure SendGrid with API key
+if (process.env.SENDGRID_API_KEY) {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+}
 
 // Template HTML para o email da clínica
 const createEmailTemplate = (formData) => {
@@ -119,169 +121,77 @@ const createEmailTemplate = (formData) => {
   `;
 };
 
-// Função principal da API
-async function handler(req, res) {
-  // Configurar CORS
+// Vercel serverless API handler
+module.exports = async function (req, res) {
+  // CORS headers for cross-origin requests
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-  );
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,POST");
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+    "X-Requested-With, Content-Type, Accept"
   );
 
-  // Responder a requisições OPTIONS (CORS preflight)
+  // Handle OPTIONS request for CORS
   if (req.method === "OPTIONS") {
-    res.status(200).end();
-    return;
+    return res.status(200).end();
   }
 
-  // Apenas aceitar POST requests
+  // Only allow POST for actual requests
   if (req.method !== "POST") {
-    return res.status(405).json({
-      success: false,
-      message: "Método não permitido. Use POST.",
-    });
+    return res
+      .status(405)
+      .json({ success: false, message: "Method Not Allowed" });
   }
+
+  // Require SendGrid API key and destination email
+  if (!process.env.SENDGRID_API_KEY || !process.env.CLINIC_EMAIL) {
+    return res
+      .status(500)
+      .json({ success: false, message: "Server not configured" });
+  }
+
+  const { name, email, phone, service, date, time, message } = req.body || {};
+
+  if (!name || !email || !phone) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Missing required fields" });
+  }
+
+  const formData = {
+    name: String(name).trim(),
+    email: String(email).trim().toLowerCase(),
+    phone: String(phone).trim(),
+    service: service || "Consulta Geral",
+    date: date || "A definir",
+    time: time || "A definir",
+    message: message ? String(message).trim() : "",
+  };
+
+  const msg = {
+    to: process.env.CLINIC_EMAIL,
+    from: {
+      email: process.env.FROM_EMAIL || "noreply@myclinic.ao",
+      name: "MyClinic Angola - Website",
+    },
+    replyTo: formData.email,
+    subject: `Nova Consulta - ${formData.name}`,
+    text: `Nome: ${formData.name}\nEmail: ${formData.email}\nTelefone: ${
+      formData.phone
+    }\nServiço: ${formData.service}\nData: ${formData.date}\nHora: ${
+      formData.time
+    }\n${formData.message ? `Mensagem: ${formData.message}` : ""}`,
+    html: createEmailTemplate(formData),
+  };
 
   try {
-    // Validar se as variáveis de ambiente estão configuradas
-    if (!process.env.SENDGRID_API_KEY || !process.env.CLINIC_EMAIL || !process.env.CLINIC_EMAIL2) {
-      return res.status(500).json({
-        success: false,
-        message:
-          "Configuração do servidor incompleta. Contacte o administrador.",
-      });
-    }
-
-    // Extrair dados do formulário
-    const { name, email, phone, service, date, time, message } = req.body;
-
-    // Validação básica
-    if (!name || !email || !phone) {
-      return res.status(400).json({
-        success: false,
-        message: "Nome, email e telefone são obrigatórios.",
-      });
-    }
-
-    // Validação de email básica
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({
-        success: false,
-        message: "Email inválido.",
-      });
-    }
-
-    // Dados do formulário para o template
-    const formData = {
-      name: name.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone.trim(),
-      service: service || "Consulta Geral",
-      date: date || "A definir",
-      time: time || "A definir",
-      message: message ? message.trim() : "",
-    };
-
-    // Configurar email para a clínica
-    const clinicMsg = {
-      to: [process.env.CLINIC_EMAIL, process.env.CLINIC_EMAIL2], // Emails da clínica
-      from: {
-        email: process.env.FROM_EMAIL || "noreply@myclinic.ao",
-        name: "MyClinic Angola - Website",
-      },
-      replyTo: email, // Para responder diretamente ao paciente
-      subject: `🦷 Nova Consulta Agendada - ${name}`,
-      html: createEmailTemplate(formData),
-      // Texto alternativo para clientes que não suportam HTML
-      text: `
-Nova Consulta Agendada - MyClinic Angola
-
-Nome: ${name}
-Email: ${email}
-Telefone: ${phone}
-Serviço: ${service || "Consulta Geral"}
-Data Preferida: ${date || "A definir"}
-Horário Preferido: ${time || "A definir"}
-${message ? `\nMensagem: ${message}` : ""}
-
-Entre em contacto com o paciente o mais rápido possível para confirmar a consulta.
-      `,
-    };
-
-    // Enviar apenas email para a clínica
-    await sgMail.send(clinicMsg);
-
-    // Resposta de sucesso
-    res.status(200).json({
+    await sgMail.send(msg);
+    return res.status(200).json({
       success: true,
-      message:
-        "Sua marcação foi efetuada com sucesso! Entraremos em contacto consigo.",
+      message: "Pedido enviado com sucesso.",
     });
-  } catch (error) {
-    console.error("Erro ao enviar email:", error);
-
-    // Log detalhado do erro (apenas no servidor)
-    if (error.response) {
-      console.error("SendGrid Error:", error.response.body);
-    }
-
-    // Determinar tipo de erro e resposta apropriada
-    let errorMessage =
-      "Falha ao marcar consulta. Entre em contacto connosco via telefone.";
-    let statusCode = 500;
-
-    // Verificar se é erro de validação de email
-    if (error.response && error.response.body) {
-      const errorBody = error.response.body;
-
-      // Erro de email inválido ou domínio rejeitado
-      if (
-        errorBody.errors &&
-        errorBody.errors.some(
-          (err) =>
-            err.message &&
-            (err.message.includes("invalid email") ||
-              err.message.includes("does not contain a valid address") ||
-              err.message.includes("blocked"))
-        )
-      ) {
-        errorMessage =
-          "Falha ao marcar consulta. Verifique seu email ou entre em contacto via telefone.";
-        statusCode = 400;
-      }
-
-      // Erro de quota excedida
-      if (
-        errorBody.errors &&
-        errorBody.errors.some(
-          (err) => err.message && err.message.includes("quota")
-        )
-      ) {
-        errorMessage =
-          "Falha ao marcar consulta. Entre em contacto connosco via telefone.";
-        statusCode = 503;
-      }
-    }
-
-    // Resposta de erro segura para o cliente (sem exposição de detalhes técnicos)
-    res.status(statusCode).json({
-      success: false,
-      message: errorMessage,
-      contactInfo: {
-        phone1: "+244 933 000 331",
-        phone2: "+244 928 616 519",
-        email: "geral@myclinic.ao",
-        address: "Shopping Fortaleza, Piso 2",
-      },
-    });
+  } catch (e) {
+    return res.status(500).json({ success: false, message: "Falha no envio." });
   }
-}
-
-// Exportar usando CommonJS para compatibilidade com require()
-module.exports = handler;
+};
