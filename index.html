@@ -1,720 +1,672 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyClinic Angola - Cuidados Dentários de Excelência</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="light-mode">
-    <!-- Topbar Banner -->
-    <div class="topbar">
-      <div class="container topbar-content">
-        <div class="topbar-left">
-          <span
-            ><i class="fas fa-map-marker-alt"></i> Shopping Fortaleza - Piso
-            2</span
-          >
-          <span><i class="fas fa-phone"></i> +244 933 000 331</span>
-          <span><i class="fas fa-phone"></i> +244 928 616 519</span>
-          <span><i class="fas fa-envelope"></i> geral@myclinic.ao</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyClinic Angola - Cuidados Dentários de Excelência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="light-mode">
+  <!-- Topbar Banner -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-left">
+        <span><i class="fas fa-map-marker-alt"></i> Shopping Fortaleza - Piso
+          2</span>
+        <span><i class="fas fa-phone"></i> +244 933 000 331</span>
+        <span><i class="fas fa-phone"></i> +244 928 616 519</span>
+        <span><i class="fas fa-envelope"></i> geral@myclinic.ao</span>
+      </div>
+      <div class="topbar-right">
+        <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="public/img/myclinic-logo.png" alt="MyClinic Logo" id="mainLogo" style="height: 48px" />
         </div>
-        <div class="topbar-right">
-          <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="#" aria-label="LinkedIn"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
+        <nav class="nav" id="mainNav">
+          <a href="#home" class="nav-link" data-translate="navHome">Início</a>
+          <a href="#about" class="nav-link" data-translate="navAbout">Sobre Nós</a>
+          <a href="#services" class="nav-link" data-translate="navServices">Serviços</a>
+          <a href="#team" class="nav-link" data-translate="navTeam">Equipa</a>
+          <a href="#testimonials" class="nav-link" data-translate="navTestimonials">Testemunhos</a>
+          <a href="#contact" class="nav-link" data-translate="navContact">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+
+          <div class="language-selector">
+            <button class="language-btn" id="languageBtn">
+              <i class="fas fa-globe"></i>
+              <span id="currentLang">PT</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="language-dropdown" id="languageDropdown">
+              <button class="language-option" data-lang="pt">
+                <span class="flag">🇵🇹</span>
+                <span>Português</span>
+              </button>
+              <button class="language-option" data-lang="en">
+                <span class="flag">🇬🇧</span>
+                <span>English</span>
+              </button>
+              <button class="language-option" data-lang="jp">
+                <span class="flag">🇯🇵</span>
+                <span>日本語</span>
+              </button>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-sm btn-primary" data-translate="btnAppointment">Consulta</a>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </div>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <img
-              src="public/img/myclinic-logo.png"
-              alt="MyClinic Logo"
-              id="mainLogo"
-              style="height: 48px"
-            />
-          </div>
+  </header>
 
-          <nav class="nav" id="mainNav">
-            <a href="#home" class="nav-link" data-translate="navHome">Início</a>
-            <a href="#about" class="nav-link" data-translate="navAbout"
-              >Sobre Nós</a
-            >
-            <a href="#services" class="nav-link" data-translate="navServices"
-              >Serviços</a
-            >
-            <a href="#team" class="nav-link" data-translate="navTeam">Equipa</a>
-            <a
-              href="#testimonials"
-              class="nav-link"
-              data-translate="navTestimonials"
-              >Testemunhos</a
-            >
-            <a href="#contact" class="nav-link" data-translate="navContact"
-              >Contacto</a
-            >
-          </nav>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <!-- Imagem de fundo -->
+      <div class="hero-image-section">
+        <img id="carouselImage" src="/public/img/17 anos MyClinic.png?v=1760527600&cache=bust"
+          alt="17 Anos MyClinic - Banner Atualizado" class="hero-image" />
+        <div class="hero-overlay"></div>
+      </div>
 
-          <div class="header-actions">
-            <button
-              class="theme-toggle"
-              id="themeToggle"
-              aria-label="Toggle theme"
-            >
-              <i class="fas fa-moon"></i>
-            </button>
-
-            <div class="language-selector">
-              <button class="language-btn" id="languageBtn">
-                <i class="fas fa-globe"></i>
-                <span id="currentLang">PT</span>
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <div class="language-dropdown" id="languageDropdown">
-                <button class="language-option" data-lang="pt">
-                  <span class="flag">🇵🇹</span>
-                  <span>Português</span>
-                </button>
-                <button class="language-option" data-lang="en">
-                  <span class="flag">🇬🇧</span>
-                  <span>English</span>
-                </button>
-                <button class="language-option" data-lang="jp">
-                  <span class="flag">🇯🇵</span>
-                  <span>日本語</span>
-                </button>
-              </div>
-            </div>
-
-            <a
-              href="#contact"
-              class="btn btn-sm btn-primary"
-              data-translate="btnAppointment"
-              >Consulta</a
-            >
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+      <!-- Conteúdo do texto -->
+      <div class="hero-content-section">
+        <div class="hero-content" id="carouselText">
+          <!-- Conteúdo será inserido dinamicamente pelo JavaScript -->
         </div>
       </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-container">
-        <!-- Imagem de fundo -->
-        <div class="hero-image-section">
-          <img
-            id="carouselImage"
-            src="public/img/17 anos MyClinic.png?v=1760527600&cache=bust"
-            alt="17 Anos MyClinic - Banner Atualizado"
-            class="hero-image"
-          />
-          <div class="hero-overlay"></div>
-        </div>
-        
-        <!-- Conteúdo do texto -->
-        <div class="hero-content-section">
-          <div class="hero-content" id="carouselText">
-            <!-- Conteúdo será inserido dinamicamente pelo JavaScript -->
-          </div>
-        </div>
-        
-        <!-- Controles do carrossel -->
-        <button
-          class="carousel-arrow left"
-          id="carouselPrev"
-          aria-label="Anterior"
-        >
-          &#60;
-        </button>
-        <button
-          class="carousel-arrow right"
-          id="carouselNext"
-          aria-label="Próximo"
-        >
-          &#62;
-        </button>
-        
-        <!-- Indicador de scroll -->
-        <div class="scroll-indicator">
-          <div class="mouse">
-            <div class="wheel"></div>
-          </div>
+      <!-- Controles do carrossel -->
+      <button class="carousel-arrow left" id="carouselPrev" aria-label="Anterior">
+        &#60;
+      </button>
+      <button class="carousel-arrow right" id="carouselNext" aria-label="Próximo">
+        &#62;
+      </button>
+
+      <!-- Indicador de scroll -->
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <!-- Badge -->
-          <div class="about-image-wrapper" data-aos="fade-right">
-            <div class="about-badge">
-              <span class="badge-number years-dynamic">17</span>
-              <span class="badge-text" data-translate="badgeYears"
-                >Anos de Excelência</span
-              >
-            </div>
-          </div>
-
-          <!-- Conteúdo -->
-          <div class="about-content" data-aos="fade-left">
-            <div class="section-label" data-translate="labelAbout">
-              Sobre Nós
-            </div>
-            <h2 class="section-title" data-translate="aboutTitle">
-              A Cuidar da Saúde do Seu Sorriso
-            </h2>
-            <p class="section-text experience-years" data-translate="aboutText1">
-              Com <span class="years-dynamic">17</span> anos de atividade, a My Clinic nasceu com o objetivo de
-              garantir a todos os angolanos o direito fundamental de sorrir.
-            </p>
-            <p class="section-text" data-translate="aboutText2">
-              Hoje, com consultório localizado no Shopping Fortaleza em Luanda, 
-              oferecemos serviços médicos de excelência. Nossa equipe é composta 
-              por mais de 20 profissionais dedicados a proporcionar um atendimento 
-              único e de alta qualidade.
-            </p>
-
-            <ul class="about-features">
-              <li>
-                <i class="fas fa-user-md"></i>
-                <span data-translate="feature1"
-                  >Equipa de especialistas altamente qualificados</span
-                >
-              </li>
-              <li>
-                <i class="fas fa-microchip"></i>
-                <span data-translate="feature2"
-                  >Tecnologia de última geração</span
-                >
-              </li>
-              <li>
-                <i class="fas fa-clinic-medical"></i>
-                <span data-translate="feature3"
-                  >Ambiente acolhedor e esterilizado</span
-                >
-              </li>
-              <li>
-                <i class="fas fa-notes-medical"></i>
-                <span data-translate="feature4"
-                  >Planos de tratamento personalizados</span
-                >
-              </li>
-            </ul>
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Badge -->
+        <div class="about-image-wrapper" data-aos="fade-right">
+          <div class="about-badge">
+            <span class="badge-number years-dynamic">17</span>
+            <span class="badge-text" data-translate="badgeYears">Anos de Excelência</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-label" data-translate="labelServices">
-            Nossos Serviços
+        <!-- Conteúdo -->
+        <div class="about-content" data-aos="fade-left">
+          <div class="section-label" data-translate="labelAbout">
+            Sobre Nós
           </div>
-          <h2 class="section-title" data-translate="servicesTitle">
-            Descubra Soluções Completas para Sua Saúde Bucal
+          <h2 class="section-title" data-translate="aboutTitle">
+            A Cuidar da Saúde do Seu Sorriso
           </h2>
-        </div>
-        <div class="services-grid">
-          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="service-title" data-translate="service1Title">
-              Ortodontia
-            </h3>
-            <p class="service-description" data-translate="service1Desc">
-              Uma especialidade que corrige a posição dos dentes e dos ossos
-              maxilares posicionados de forma inadequada, com a aplicação de
-              aparelhos.
-            </p>
-            <a href="#contact" class="service-link" data-translate="serviceLink"
-              >Saiba Mais <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="service-title" data-translate="service2Title">
-              Implantodontia
-            </h3>
-            <p class="service-description" data-translate="service2Desc">
-              Uma área especializada na colocação de Implantes dentários,
-              oferecendo soluções permanentes para substituição de dentes
-              perdidos.
-            </p>
-            <a href="#contact" class="service-link" data-translate="serviceLink"
-              >Saiba Mais <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-            <h3 class="service-title" data-translate="service3Title">
-              Odontopediatria
-            </h3>
-            <p class="service-description" data-translate="service3Desc">
-              Cuida da saúde bucal de crianças, desde o nascimento até a
-              adolescência, com abordagem especializada e acolhedora.
-            </p>
-            <a href="#contact" class="service-link" data-translate="serviceLink"
-              >Saiba Mais <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-            <h3 class="service-title" data-translate="service4Title">
-              Dentisteria Estética
-            </h3>
-            <p class="service-description" data-translate="service4Desc">
-              Uma área especializada em restaurações, tratamentos de cáries e
-              branqueamento dentário para um sorriso perfeito.
-            </p>
-            <a href="#contact" class="service-link" data-translate="serviceLink"
-              >Saiba Mais <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-            <h3 class="service-title" data-translate="service5Title">
-              Prótese Dentária
-            </h3>
-            <p class="service-description" data-translate="service5Desc">
-              Uma área especializada da medicina que se preocupa com a recriação
-              da dentição, seja com a aplicação de próteses fixas, como coroas
-              ou pontes.
-            </p>
-            <a href="#contact" class="service-link" data-translate="serviceLink"
-              >Saiba Mais <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-            <h3 class="service-title" data-translate="service6Title">
-              Periodontologia
-            </h3>
-            <p class="service-description" data-translate="service6Desc">
-              Uma especialidade no tratamento de doenças das gengivas, bem como
-              limpezas dentárias e prevenção.
-            </p>
-            <a href="#contact" class="service-link" data-translate="serviceLink"
-              >Saiba Mais <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-label" data-translate="labelTestimonials">
-            Testemunhos
-          </div>
-          <h2 class="section-title" data-translate="testimonialsTitle">
-            O Que Nossos Pacientes Dizem
-          </h2>
-        </div>
-        <!-- Reviews Carousel -->
-        <div class="reviews-carousel-container">
-          <!-- Navigation Arrows -->
-          <button class="review-arrow review-arrow-left" id="reviewPrev" aria-label="Review anterior">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="review-arrow review-arrow-right" id="reviewNext" aria-label="Próximo review">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-          
-          <!-- Reviews Container -->
-          <div class="reviews-wrapper">
-            <div class="reviews-track" id="reviewsTrack">
-              <div class="review-item active" id="review-1">
-                <div class="testimonial-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text" data-translate="review1Text">"Excelente atendimento! Os profissionais são muito atenciosos e o ambiente é muito acolhedor. Recomendo!"</p>
-                <div class="testimonial-author">
-                  <div class="author-info">
-                    <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="review-item" id="review-2">
-                <div class="testimonial-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text" data-translate="review2Text">"Fiz um tratamento de canal e fiquei impressionado com a qualidade do serviço. Sem dor e muito profissional."</p>
-                <div class="testimonial-author">
-                  <div class="author-info">
-                    <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="review-item" id="review-3">
-                <div class="testimonial-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text" data-translate="review3Text">"A MyClinic mudou minha vida! Agora tenho um sorriso perfeito. Obrigado por todo o cuidado."</p>
-                <div class="testimonial-author">
-                  <div class="author-info">
-                    <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="review-item" id="review-4">
-                <div class="testimonial-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text" data-translate="review4Text">"Atendimento de primeira qualidade. Equipamentos modernos e uma equipe muito preparada."</p>
-                <div class="testimonial-author">
-                  <div class="author-info">
-                    <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="review-item" id="review-5">
-                <div class="testimonial-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text" data-translate="review5Text">"Já sou paciente há mais de 5 anos. Sempre fui bem atendido e os resultados são excepcionais."</p>
-                <div class="testimonial-author">
-                  <div class="author-info">
-                    <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="review-item" id="review-6">
-                <div class="testimonial-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text" data-translate="review6Text">"Profissionais competentes e cuidadosos. O ambiente é limpo e organizado. Muito satisfeito!"</p>
-                <div class="testimonial-author">
-                  <div class="author-info">
-                    <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Indicators -->
-          <div class="review-indicators" id="reviewIndicators">
-            <span class="indicator active" data-review="1"></span>
-            <span class="indicator" data-review="2"></span>
-            <span class="indicator" data-review="3"></span>
-            <span class="indicator" data-review="4"></span>
-            <span class="indicator" data-review="5"></span>
-            <span class="indicator" data-review="6"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section (ATUALIZADA) -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <!-- CARD FLUTUANTE (decorativo, atrás do conteúdo) -->
-        <div class="contact-card-bg" aria-hidden="true"></div>
-
-        <!-- Conteúdo que fica SOBRE o cartão (grid) -->
-        <div class="contact-grid">
-          <div class="contact-info" data-aos="fade-right">
-            <div class="section-label" data-translate="labelContact">
-              Contacto
-            </div>
-            <h2 class="section-title" data-translate="contactTitle">
-              Entre em Contacto Connosco
-            </h2>
-            <p class="section-text" data-translate="contactText">
-              Estamos aqui para responder às suas perguntas e agendar a sua
-              consulta. Entre em contacto connosco através dos meios abaixo.
-            </p>
-
-            <div class="contact-items">
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-details">
-                  <h4 data-translate="contactLocation2">
-                    Shopping Fortaleza - Piso 2
-                  </h4>
-                  <p>Luanda, Angola</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <div class="contact-details">
-                  <h4 data-translate="contactPhone">Telefone</h4>
-                  <p>+244 928 616 519</p>
-                  <p>+244 933 000 331</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div class="contact-details">
-                  <h4 data-translate="contactEmail">Email</h4>
-                  <p>geral@myclinic.ao</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-clock"></i></div>
-                <div class="contact-details">
-                  <h4 data-translate="contactHours">
-                    Horário de Funcionamento
-                  </h4>
-                  <p data-translate="contactHoursWeek">
-                    Segunda - Sexta: 8h - 20h
-                  </p>
-                  <p data-translate="contactHoursWeekend">
-                    Sábados e Domingos: 8h - 20h
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form-wrapper" data-aos="fade-left">
-            <form class="contact-form" id="contactForm">
-              <h3 data-translate="formTitle">Marcar Consulta</h3>
-
-              <div class="form-group">
-                <label for="name" data-translate="formName"
-                  >Nome Completo</label
-                >
-                <input type="text" id="name" name="name" required />
-              </div>
-
-              <div class="form-group">
-                <label for="email" data-translate="formEmail">Email</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div class="form-group">
-                <label for="phone" data-translate="formPhone">Telefone</label>
-                <input type="tel" id="phone" name="phone" required />
-              </div>
-
-              <div class="form-group">
-                <label for="service" data-translate="formService"
-                  >Serviço</label
-                >
-                <select id="service" name="service" required>
-                  <option value="" data-translate="formSelectService">
-                    Selecione um serviço
-                  </option>
-                  <option value="ortodontia" data-translate="service1Title">
-                    Ortodontia
-                  </option>
-                  <option value="implantodontia" data-translate="service2Title">
-                    Implantodontia
-                  </option>
-                  <option
-                    value="odontopediatria"
-                    data-translate="service3Title"
-                  >
-                    Odontopediatria
-                  </option>
-                  <option value="dentisteria" data-translate="service4Title">
-                    Dentisteria Estética
-                  </option>
-                  <option value="protese" data-translate="service5Title">
-                    Prótese Dentária
-                  </option>
-                  <option
-                    value="periodontologia"
-                    data-translate="service6Title"
-                  >
-                    Periodontologia
-                  </option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message" data-translate="formMessage"
-                  >Mensagem</label
-                >
-                <textarea id="message" name="message" rows="4"></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="btn btn-primary btn-block"
-                data-translate="formSubmit"
-              >
-                Enviar Pedido
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <div class="footer-logo">
-              <span class="footer-logo-text" data-translate="siteName"
-                >MyClinic Angola</span
-              >
-            </div>
-            <p class="footer-text" data-translate="footerText">
-              A MyClinic Angola é líder em cuidados dentários de excelência,
-              oferecendo tratamentos personalizados com tecnologia de ponta.
-            </p>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" aria-label="Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" aria-label="LinkedIn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="#" aria-label="YouTube"
-                ><i class="fab fa-youtube"></i
-              ></a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-title" data-translate="footerLinksTitle">
-              Links Rápidos
-            </h4>
-            <ul class="footer-links">
-              <li><a href="#home" data-translate="navHome">Início</a></li>
-              <li><a href="#about" data-translate="navAbout">Sobre Nós</a></li>
-              <li>
-                <a href="#services" data-translate="navServices">Serviços</a>
-              </li>
-              <li>
-                <a href="#contact" data-translate="navContact">Contacto</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-title" data-translate="footerServicesTitle">
-              Serviços
-            </h4>
-            <ul class="footer-links">
-              <li>
-                <a href="#services" data-translate="service1Title"
-                  >Ortodontia</a
-                >
-              </li>
-              <li>
-                <a href="#services" data-translate="service2Title"
-                  >Implantodontia</a
-                >
-              </li>
-              <li>
-                <a href="#services" data-translate="service3Title"
-                  >Odontopediatria</a
-                >
-              </li>
-              <li>
-                <a href="#services" data-translate="service4Title"
-                  >Dentisteria Estética</a
-                >
-              </li>
-              <li>
-                <a href="#services" data-translate="service5Title"
-                  >Prótese Dentária</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-title" data-translate="footerContactTitle">
-              Contacto
-            </h4>
-            <ul class="footer-contact">
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Shopping Fortaleza - Piso 2</span>
-              </li>
-              <li>
-                <i class="fas fa-phone"></i>
-                <span>+244 928 616 519</span>
-              </li>
-              <li>
-                <i class="fas fa-envelope"></i>
-                <span>geral@myclinic.ao</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p data-translate="footerCopyright">
-            © <span class="current-year"></span> MyClinic Angola. Todos os direitos reservados.
+          <p class="section-text experience-years" data-translate="aboutText1">
+            Fundada em 2008, a DentalClinic – Consultório Dentário, LDA conta com mais de <span
+              class="years-dynamic">17</span> anos de experiência dedicados à promoção da saúde oral e ao bem-estar dos
+            seus pacientes. Ao longo da sua trajetória, tem-se afirmado como uma referência no setor, combinando
+            competência técnica, atendimento humanizado e o uso de tecnologia de ponta.
           </p>
-          <div class="footer-legal">
-            <a href="privacy-policy.html" data-translate="footerPrivacy"
-              >Política de Privacidade</a
-            >
-            <a href="terms-of-use.html" data-translate="footerTerms">Termos de Uso</a>
-          </div>
+
+          <p class="section-text" data-translate="aboutText2">
+            Com uma equipa de 20 profissionais altamente qualificados nas diversas especialidades da medicina dentária,
+            a DentalClinic oferece um atendimento completo, que abrange desde a prevenção até aos tratamentos mais
+            avançados. O compromisso com a excelência clínica, a ética profissional e o respeito pelo paciente tem sido
+            a base do seu sucesso e credibilidade ao longo dos anos.
+          </p>
+
+          <p class="section-text" data-translate="aboutText3">
+            Em Outubro de 2023, num processo de evolução e modernização da sua identidade, a clínica passou a operar sob
+            a marca My Clinic, localizada no Shopping Fortaleza, em Luanda. Esta mudança representa um novo capítulo na
+            história da DentalClinic — uma fase marcada pela inovação, rejuvenescimento da marca e pela aposta em
+            experiências mais próximas e personalizadas para cada paciente.
+          </p>
+
+          <p class="section-text" data-translate="aboutText4">
+            Hoje, a My Clinic mantém o mesmo compromisso que deu origem à DentalClinic: oferecer a todos o direito
+            fundamental de sorrir, com confiança, saúde e qualidade de vida.
+          </p>
+
+
+          <ul class="about-features">
+            <li>
+              <i class="fas fa-user-md"></i>
+              <span data-translate="feature1">Equipa de especialistas altamente qualificados</span>
+            </li>
+            <li>
+              <i class="fas fa-microchip"></i>
+              <span data-translate="feature2">Tecnologia de última geração</span>
+            </li>
+            <li>
+              <i class="fas fa-clinic-medical"></i>
+              <span data-translate="feature3">Ambiente acolhedor e esterilizado</span>
+            </li>
+            <li>
+              <i class="fas fa-notes-medical"></i>
+              <span data-translate="feature4">Planos de tratamento personalizados</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-label" data-translate="labelServices">
+          Nossos Serviços
+        </div>
+        <h2 class="section-title" data-translate="servicesTitle">
+          Descubra Soluções Completas para Sua Saúde Bucal
+        </h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="service-title" data-translate="service1Title">
+            Ortodontia
+          </h3>
+          <p class="service-description" data-translate="service1Desc">
+            Uma especialidade que corrige a posição dos dentes e dos ossos
+            maxilares posicionados de forma inadequada, com a aplicação de
+            aparelhos.
+          </p>
+          <a href="#contact" class="service-link" data-translate="serviceLink">Saiba Mais <i
+              class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="service-title" data-translate="service2Title">
+            Implantodontia
+          </h3>
+          <p class="service-description" data-translate="service2Desc">
+            Uma área especializada na colocação de Implantes dentários,
+            oferecendo soluções permanentes para substituição de dentes
+            perdidos.
+          </p>
+          <a href="#contact" class="service-link" data-translate="serviceLink">Saiba Mais <i
+              class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="service-title" data-translate="service3Title">
+            Odontopediatria
+          </h3>
+          <p class="service-description" data-translate="service3Desc">
+            Cuida da saúde bucal de crianças, desde o nascimento até a
+            adolescência, com abordagem especializada e acolhedora.
+          </p>
+          <a href="#contact" class="service-link" data-translate="serviceLink">Saiba Mais <i
+              class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="service-title" data-translate="service4Title">
+            Dentisteria Estética
+          </h3>
+          <p class="service-description" data-translate="service4Desc">
+            Uma área especializada em restaurações, tratamentos de cáries e
+            branqueamento dentário para um sorriso perfeito.
+          </p>
+          <a href="#contact" class="service-link" data-translate="serviceLink">Saiba Mais <i
+              class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <h3 class="service-title" data-translate="service5Title">
+            Prótese Dentária
+          </h3>
+          <p class="service-description" data-translate="service5Desc">
+            Uma área especializada da medicina que se preocupa com a recriação
+            da dentição, seja com a aplicação de próteses fixas, como coroas
+            ou pontes.
+          </p>
+          <a href="#contact" class="service-link" data-translate="serviceLink">Saiba Mais <i
+              class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+          <h3 class="service-title" data-translate="service6Title">
+            Periodontologia
+          </h3>
+          <p class="service-description" data-translate="service6Desc">
+            Uma especialidade no tratamento de doenças das gengivas, bem como
+            limpezas dentárias e prevenção.
+          </p>
+          <a href="#contact" class="service-link" data-translate="serviceLink">Saiba Mais <i
+              class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-label" data-translate="labelTestimonials">
+          Testemunhos
+        </div>
+        <h2 class="section-title" data-translate="testimonialsTitle">
+          O Que Nossos Pacientes Dizem
+        </h2>
+      </div>
+      <!-- Reviews Carousel -->
+      <div class="reviews-carousel-container">
+        <!-- Navigation Arrows -->
+        <button class="review-arrow review-arrow-left" id="reviewPrev" aria-label="Review anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="review-arrow review-arrow-right" id="reviewNext" aria-label="Próximo review">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Reviews Container -->
+        <div class="reviews-wrapper">
+          <div class="reviews-track" id="reviewsTrack">
+            <div class="review-item" id="review-1">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text" data-translate="review1Text">"Parabéns pelo trabalho de excelência! Sente-se
+                que se dedicam para fazer do país um lugar melhor.
+                Recomendo todos os tratamentos na My Clinic. Excelentes profissionais e de qualidade."</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
+                </div>
+              </div>
+            </div>
+            <div class="review-item active" id="review-2">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text" data-translate="review2Text">"Sou paciente da My Clinic há vários anos e
+                sempre fui muito bem atendida.
+                A equipa é extremamente simpática e profissional, sempre pronta a esclarecer todas as dúvidas.
+                O ambiente é limpo, acolhedor e transmite confiança.
+                Recomendo a 100%!"</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <span class="author-role" data-translate="clientMyClinic">Maria da Silva</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-item" id="review-3">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text" data-translate="review3Text">"Excelente atendimento!
+                Fui muito bem recebido desde a receção até ao final do tratamento.
+                A Dra. foi muito atenciosa e explicou cada etapa do procedimento.
+                Sem dúvida, uma das melhores clínicas de Luanda."</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-item" id="review-4">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text" data-translate="review4Text">"A My Clinic superou as minhas expectativas.
+                Profissionais competentes, instalações modernas e um atendimento humanizado.
+                Sinto-me confiante e satisfeita com os resultados obtidos."</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-item" id="review-5">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text" data-translate="review5Text">"Agradeço a toda a equipa da My Clinic pela
+                paciência, dedicação e carinho.
+                Perdi o medo de ir ao dentista graças a vocês.
+                Hoje, volto a sorrir com confiança!"</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-item" id="review-6">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text" data-translate="review6Text">"Gostei muito da experiência na My Clinic.
+                Desde a marcação até o atendimento, tudo foi feito com profissionalismo e simpatia.
+                Recomendo vivamente a todos que procuram um bom atendimento dentário em Luanda."</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-item" id="review-7">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text" data-translate="review7Text">"O meu tratamento foi um sucesso!
+                Equipa excelente, atendimento rápido e eficaz.
+                Voltarei sempre que precisar e recomendarei a familiares e amigos."</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <span class="author-role" data-translate="clientMyClinic">Cliente MyClinic</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicators -->
+        <div class="review-indicators" id="reviewIndicators">
+          <span class="indicator active" data-review="1"></span>
+          <span class="indicator" data-review="2"></span>
+          <span class="indicator" data-review="3"></span>
+          <span class="indicator" data-review="4"></span>
+          <span class="indicator" data-review="5"></span>
+          <span class="indicator" data-review="6"></span>
+          <span class="indicator" data-review="7"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (ATUALIZADA) -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <!-- CARD FLUTUANTE (decorativo, atrás do conteúdo) -->
+      <div class="contact-card-bg" aria-hidden="true"></div>
+
+      <!-- Conteúdo que fica SOBRE o cartão (grid) -->
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="section-label" data-translate="labelContact">
+            Contacto
+          </div>
+          <h2 class="section-title" data-translate="contactTitle">
+            Entre em Contacto Connosco
+          </h2>
+          <p class="section-text" data-translate="contactText">
+            Estamos aqui para responder às suas perguntas e agendar a sua
+            consulta. Entre em contacto connosco através dos meios abaixo.
+          </p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4 data-translate="contactLocation2">
+                  Shopping Fortaleza - Piso 2
+                </h4>
+                <p>Luanda, Angola</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-details">
+                <h4 data-translate="contactPhone">Telefone</h4>
+                <p>+244 928 616 519</p>
+                <p>+244 933 000 331</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-details">
+                <h4 data-translate="contactEmail">Email</h4>
+                <p>geral@myclinic.ao</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
+              <div class="contact-details">
+                <h4 data-translate="contactHours">
+                  Horário de Funcionamento
+                </h4>
+                <p data-translate="contactHoursWeek">
+                  Segunda - Sexta: 8h - 20h
+                </p>
+                <p data-translate="contactHoursWeekend">
+                  Sábados e Domingos: 8h - 20h
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper" data-aos="fade-left">
+          <form class="contact-form" id="contactForm">
+            <h3 data-translate="formTitle">Marcar Consulta</h3>
+
+            <div class="form-group">
+              <label for="name" data-translate="formName">Nome Completo</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-translate="formEmail">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone" data-translate="formPhone">Telefone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="service" data-translate="formService">Serviço</label>
+              <select id="service" name="service" required>
+                <option value="" data-translate="formSelectService">
+                  Selecione um serviço
+                </option>
+                <option value="ortodontia" data-translate="service1Title">
+                  Ortodontia
+                </option>
+                <option value="implantodontia" data-translate="service2Title">
+                  Implantodontia
+                </option>
+                <option value="odontopediatria" data-translate="service3Title">
+                  Odontopediatria
+                </option>
+                <option value="dentisteria" data-translate="service4Title">
+                  Dentisteria Estética
+                </option>
+                <option value="protese" data-translate="service5Title">
+                  Prótese Dentária
+                </option>
+                <option value="periodontologia" data-translate="service6Title">
+                  Periodontologia
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-translate="formMessage">Mensagem</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" data-translate="formSubmit">
+              Enviar Pedido
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="footer-logo-text" data-translate="siteName">MyClinic Angola</span>
+          </div>
+          <p class="footer-text" data-translate="footerText">
+            A MyClinic Angola é líder em cuidados dentários de excelência,
+            oferecendo tratamentos personalizados com tecnologia de ponta.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title" data-translate="footerLinksTitle">
+            Links Rápidos
+          </h4>
+          <ul class="footer-links">
+            <li><a href="#home" data-translate="navHome">Início</a></li>
+            <li><a href="#about" data-translate="navAbout">Sobre Nós</a></li>
+            <li>
+              <a href="#services" data-translate="navServices">Serviços</a>
+            </li>
+            <li>
+              <a href="#contact" data-translate="navContact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title" data-translate="footerServicesTitle">
+            Serviços
+          </h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#services" data-translate="service1Title">Ortodontia</a>
+            </li>
+            <li>
+              <a href="#services" data-translate="service2Title">Implantodontia</a>
+            </li>
+            <li>
+              <a href="#services" data-translate="service3Title">Odontopediatria</a>
+            </li>
+            <li>
+              <a href="#services" data-translate="service4Title">Dentisteria Estética</a>
+            </li>
+            <li>
+              <a href="#services" data-translate="service5Title">Prótese Dentária</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title" data-translate="footerContactTitle">
+            Contacto
+          </h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Shopping Fortaleza - Piso 2</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>+244 928 616 519</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>geral@myclinic.ao</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-translate="footerCopyright">
+          © <span class="current-year"></span> MyClinic Angola. Todos os direitos reservados.
+        </p>
+        <div class="footer-legal">
+          <a href="privacy-policy.html" data-translate="footerPrivacy">Política de Privacidade</a>
+          <a href="terms-of-use.html" data-translate="footerTerms">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
