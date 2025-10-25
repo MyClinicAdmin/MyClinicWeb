@@ -2,12 +2,10 @@
   "name": "myclinic-angola-website",
   "version": "1.0.0",
   "description": "Website profissional para MyClinic Angola com API serverless para agendamento de consultas",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Build completed'",
-    "start": "python3 -m http.server 8000",
-    "deploy": "vercel --prod"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "keywords": [
     "dental",
@@ -20,12 +18,10 @@
   "author": "MyClinic Angola",
   "license": "MIT",
   "dependencies": {
-    "@sendgrid/mail": "^7.7.0",
+    "@sendgrid/mail": "^8.1.6",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
-  },
-  "devDependencies": {
-    "vercel": "^32.5.0"
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2"
   },
   "engines": {
     "node": ">=18.0.0"
