@@ -145,7 +145,7 @@ module.exports = async function (req, res) {
   }
 
   // Require SendGrid API key and destination email
-  if (!process.env.SENDGRID_API_KEY || !process.env.CLINIC_EMAIL) {
+  if (!process.env.SENDGRID_API_KEY || !process.env.CLINIC_EMAIL || !process.env.CLINIC_EMAIL2) {
     return res
       .status(500)
       .json({ success: false, message: "Server not configured" });
@@ -170,7 +170,7 @@ module.exports = async function (req, res) {
   };
 
   const msg = {
-    to: process.env.CLINIC_EMAIL,
+    to: [process.env.CLINIC_EMAIL, process.env.CLINIC_EMAIL2],
     from: {
       email: process.env.FROM_EMAIL || "noreply@myclinic.ao",
       name: "MyClinic Angola - Website",
