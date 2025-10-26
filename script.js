@@ -262,10 +262,6 @@ function getValidationMessage(key) {
 // Contact Form Handling with API Integration
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById("contactForm");
-  
-  if (!contactForm) {
-    return;
-  }
 
   contactForm.addEventListener("submit", async function(e) {
     e.preventDefault();
@@ -273,13 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Collect form data
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData);
-
-    // Run local validation (uses validateFormData)
-    const validation = validateFormData(data);
-    if (!validation.isValid) {
-      showNotification(validation.message, 'error', 6000);
-      return;
-    }
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalText = submitButton ? submitButton.textContent : 'Enviar Pedido';
