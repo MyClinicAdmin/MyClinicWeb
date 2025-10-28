@@ -186,7 +186,7 @@ module.exports = async function (req, res) {
   };
 
   try {
-    await sgMail.send(msg);
+    const result = await sgMail.send(msg);
     return res.status(200).json({
       success: true,
       message: "Pedido enviado com sucesso.",
