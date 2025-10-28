@@ -870,6 +870,24 @@ section {
   display: block;
 }
 
+/* About image specific styling */
+.about-image-wrapper .about-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--spacing-md);
+  object-fit: cover;
+}
+
+/* Ensure badge appears over image with proper positioning */
+.about-image-wrapper .about-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 10;
+}
+
 /* Estilo do Conteúdo (Texto) */
 .about-content {
   /* No desktop, o texto fica à direita */
@@ -919,6 +937,33 @@ section {
 @media (min-width: 768px) {
   .about-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile-first: image above text */
+@media (max-width: 767px) {
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about-image-wrapper {
+    order: -1;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .about-content {
+    order: 1;
+  }
+  
+  .about-badge {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+  
+  .about-badge .badge-number {
+    font-size: 1.5rem;
   }
 }
 .about-image-wrapper {
