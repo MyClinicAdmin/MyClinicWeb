@@ -1,366 +1,332 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-translate="termsOfUseTitle">Termos de Uso - MyClinic</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-translate="termsOfUseTitle">Termos de Uso - MyClinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="/public/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+  <link rel="manifest" href="/public/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="light-mode legal-page">
-    <!-- Topbar Banner -->
-    <div class="topbar">
-      <div class="container topbar-content">
-        <div class="topbar-left">
-          <span
-            ><i class="fas fa-map-marker-alt"></i> Shopping Fortaleza - Piso
-            2</span
-          >
-          <span><i class="fas fa-phone"></i> +244 933 000 331</span>
-          <span><i class="fas fa-phone"></i> +244 928 616 519</span>
-          <span><i class="fas fa-envelope"></i> geral@myclinic.ao</span>
+  <!-- Topbar Banner -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-left">
+        <span><i class="fas fa-map-marker-alt"></i> Shopping Fortaleza - Piso
+          2</span>
+        <span><i class="fas fa-phone"></i> +244 933 000 331</span>
+        <span><i class="fas fa-phone"></i> +244 928 616 519</span>
+        <span><i class="fas fa-envelope"></i> geral@myclinic.ao</span>
+      </div>
+      <div class="topbar-right">
+        <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="public/img/myclinic-logo.png" alt="MyClinic Logo" id="mainLogo" style="height: 48px" />
         </div>
-        <div class="topbar-right">
-          <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="#" aria-label="LinkedIn"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
+        <nav class="nav" id="mainNav">
+          <a href="index.html" class="nav-link" data-translate="navHome">Início</a>
+          <a href="index.html#about" class="nav-link" data-translate="navAbout">Sobre Nós</a>
+          <a href="index.html#services" class="nav-link" data-translate="navServices">Serviços</a>
+          <a href="index.html#team" class="nav-link" data-translate="navTeam">Equipa</a>
+          <a href="index.html#testimonials" class="nav-link" data-translate="navTestimonials">Testemunhos</a>
+          <a href="index.html#contact" class="nav-link" data-translate="navContact">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+
+          <div class="language-selector">
+            <button class="language-btn" id="languageBtn">
+              <i class="fas fa-globe"></i>
+              <span id="currentLang">PT</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="language-dropdown" id="languageDropdown">
+              <button class="language-option" data-lang="pt">
+                <span class="flag">🇵🇹</span>
+                <span>Português</span>
+              </button>
+              <button class="language-option" data-lang="en">
+                <span class="flag">🇬🇧</span>
+                <span>English</span>
+              </button>
+              <button class="language-option" data-lang="jp">
+                <span class="flag">🇯🇵</span>
+                <span>日本語</span>
+              </button>
+            </div>
+          </div>
+
+          <a href="index.html#contact" class="btn btn-primary" data-translate="btnAppointment">Consulta</a>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </div>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <img
-              src="public/img/myclinic-logo.png"
-              alt="MyClinic Logo"
-              id="mainLogo"
-              style="height: 48px"
-            />
-          </div>
+  </header>
 
-          <nav class="nav" id="mainNav">
-            <a href="index.html" class="nav-link" data-translate="navHome">Início</a>
-            <a href="index.html#about" class="nav-link" data-translate="navAbout"
-              >Sobre Nós</a
-            >
-            <a href="index.html#services" class="nav-link" data-translate="navServices"
-              >Serviços</a
-            >
-            <a href="index.html#team" class="nav-link" data-translate="navTeam">Equipa</a>
-            <a
-              href="index.html#testimonials"
-              class="nav-link"
-              data-translate="navTestimonials"
-              >Testemunhos</a
-            >
-            <a href="index.html#contact" class="nav-link" data-translate="navContact"
-              >Contacto</a
-            >
-          </nav>
-
-          <div class="header-actions">
-            <button
-              class="theme-toggle"
-              id="themeToggle"
-              aria-label="Toggle theme"
-            >
-              <i class="fas fa-moon"></i>
-            </button>
-
-            <div class="language-selector">
-              <button class="language-btn" id="languageBtn">
-                <i class="fas fa-globe"></i>
-                <span id="currentLang">PT</span>
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <div class="language-dropdown" id="languageDropdown">
-                <button class="language-option" data-lang="pt">
-                  <span class="flag">🇵🇹</span>
-                  <span>Português</span>
-                </button>
-                <button class="language-option" data-lang="en">
-                  <span class="flag">🇬🇧</span>
-                  <span>English</span>
-                </button>
-                <button class="language-option" data-lang="jp">
-                  <span class="flag">🇯🇵</span>
-                  <span>日本語</span>
-                </button>
-              </div>
-            </div>
-
-            <a href="index.html#contact" class="btn btn-primary" data-translate="btnAppointment"
-              >Consulta</a
-            >
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </div>
+  <main>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-label">Termos</div>
+        <h2 class="section-title" data-translate="termsOfUseH1">Termos de Uso</h2>
+        <p class="section-text" data-translate="termsOfUseLastUpdated">Última atualização: 15 de outubro de 2025</p>
       </div>
-    </header>
 
-    <main>
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-label">Termos</div>
-          <h2 class="section-title" data-translate="termsOfUseH1">Termos de Uso</h2>
-          <p class="section-text" data-translate="termsOfUseLastUpdated">Última atualização: 15 de outubro de 2025</p>
-        </div>
+      <div class="legal-content">
+        <section>
+          <h2 data-translate="termsSection1Title">1. Aceitação dos Termos</h2>
+          <p data-translate="termsSection1Text">Ao acessar e usar o site da MyClinic, você concorda em estar vinculado a
+            estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve usar nosso site ou
+            serviços.</p>
+        </section>
 
-        <div class="legal-content">
-          <section>
-            <h2 data-translate="termsSection1Title">1. Aceitação dos Termos</h2>
-            <p data-translate="termsSection1Text">Ao acessar e usar o site da MyClinic, você concorda em estar vinculado a estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve usar nosso site ou serviços.</p>
-          </section>
+        <section>
+          <h2 data-translate="termsSection2Title">2. Descrição dos Serviços</h2>
+          <p data-translate="termsSection2Text">A MyClinic é uma clínica odontológica que oferece:</p>
+          <ul>
+            <li data-translate="termsSection2Item1">Consultas odontológicas gerais</li>
+            <li data-translate="termsSection2Item2">Tratamentos preventivos e curativos</li>
+            <li data-translate="termsSection2Item3">Procedimentos estéticos dentários</li>
+            <li data-translate="termsSection2Item4">Atendimento de emergência odontológica</li>
+            <li data-translate="termsSection2Item5">Orientações sobre saúde bucal</li>
+          </ul>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection2Title">2. Descrição dos Serviços</h2>
-                <p data-translate="termsSection2Text">A MyClinic é uma clínica odontológica que oferece:</p>
-                <ul>
-                    <li data-translate="termsSection2Item1">Consultas odontológicas gerais</li>
-                    <li data-translate="termsSection2Item2">Tratamentos preventivos e curativos</li>
-                    <li data-translate="termsSection2Item3">Procedimentos estéticos dentários</li>
-                    <li data-translate="termsSection2Item4">Atendimento de emergência odontológica</li>
-                    <li data-translate="termsSection2Item5">Orientações sobre saúde bucal</li>
-                </ul>
-            </section>
+        <section>
+          <h2 data-translate="termsSection3Title">3. Uso do Site</h2>
+          <h3 data-translate="termsSection3Sub1Title">3.1 Uso Permitido</h3>
+          <p data-translate="termsSection3Sub1Text">Você pode usar nosso site para:</p>
+          <ul>
+            <li data-translate="termsSection3Sub1Item1">Obter informações sobre nossos serviços</li>
+            <li data-translate="termsSection3Sub1Item2">Entrar em contato conosco</li>
+            <li data-translate="termsSection3Sub1Item3">Agendar consultas</li>
+            <li data-translate="termsSection3Sub1Item4">Acessar recursos educacionais sobre saúde bucal</li>
+          </ul>
 
-            <section>
-                <h2 data-translate="termsSection3Title">3. Uso do Site</h2>
-                <h3 data-translate="termsSection3Sub1Title">3.1 Uso Permitido</h3>
-                <p data-translate="termsSection3Sub1Text">Você pode usar nosso site para:</p>
-                <ul>
-                    <li data-translate="termsSection3Sub1Item1">Obter informações sobre nossos serviços</li>
-                    <li data-translate="termsSection3Sub1Item2">Entrar em contato conosco</li>
-                    <li data-translate="termsSection3Sub1Item3">Agendar consultas</li>
-                    <li data-translate="termsSection3Sub1Item4">Acessar recursos educacionais sobre saúde bucal</li>
-                </ul>
+          <h3 data-translate="termsSection3Sub2Title">3.2 Uso Proibido</h3>
+          <p data-translate="termsSection3Sub2Text">É proibido usar nosso site para:</p>
+          <ul>
+            <li data-translate="termsSection3Sub2Item1">Atividades ilegais ou não autorizadas</li>
+            <li data-translate="termsSection3Sub2Item2">Transmitir vírus ou códigos maliciosos</li>
+            <li data-translate="termsSection3Sub2Item3">Interferir no funcionamento do site</li>
+            <li data-translate="termsSection3Sub2Item4">Coletar informações de outros usuários</li>
+            <li data-translate="termsSection3Sub2Item5">Usar nosso conteúdo para fins comerciais sem autorização</li>
+          </ul>
+        </section>
 
-                <h3 data-translate="termsSection3Sub2Title">3.2 Uso Proibido</h3>
-                <p data-translate="termsSection3Sub2Text">É proibido usar nosso site para:</p>
-                <ul>
-                    <li data-translate="termsSection3Sub2Item1">Atividades ilegais ou não autorizadas</li>
-                    <li data-translate="termsSection3Sub2Item2">Transmitir vírus ou códigos maliciosos</li>
-                    <li data-translate="termsSection3Sub2Item3">Interferir no funcionamento do site</li>
-                    <li data-translate="termsSection3Sub2Item4">Coletar informações de outros usuários</li>
-                    <li data-translate="termsSection3Sub2Item5">Usar nosso conteúdo para fins comerciais sem autorização</li>
-                </ul>
-            </section>
+        <section>
+          <h2 data-translate="termsSection4Title">4. Responsabilidades do Paciente</h2>
+          <ul>
+            <li data-translate="termsSection4Item1">Fornecer informações médicas precisas e completas</li>
+            <li data-translate="termsSection4Item2">Comparecer pontualmente às consultas agendadas</li>
+            <li data-translate="termsSection4Item3">Notificar sobre cancelamentos com pelo menos 24 horas de
+              antecedência</li>
+            <li data-translate="termsSection4Item4">Seguir as instruções de tratamento e cuidados pós-procedimento</li>
+            <li data-translate="termsSection4Item5">Manter seus dados de contato atualizados</li>
+          </ul>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection4Title">4. Responsabilidades do Paciente</h2>
-                <ul>
-                    <li data-translate="termsSection4Item1">Fornecer informações médicas precisas e completas</li>
-                    <li data-translate="termsSection4Item2">Comparecer pontualmente às consultas agendadas</li>
-                    <li data-translate="termsSection4Item3">Notificar sobre cancelamentos com pelo menos 24 horas de antecedência</li>
-                    <li data-translate="termsSection4Item4">Seguir as instruções de tratamento e cuidados pós-procedimento</li>
-                    <li data-translate="termsSection4Item5">Manter seus dados de contato atualizados</li>
-                </ul>
-            </section>
+        <section>
+          <h2 data-translate="termsSection5Title">5. Agendamento de Consultas</h2>
+          <h3 data-translate="termsSection5Sub1Title">5.1 Política de Cancelamento</h3>
+          <ul>
+            <li data-translate="termsSection5Sub1Item1">Cancelamentos devem ser feitos com pelo menos 24 horas de
+              antecedência</li>
+            <li data-translate="termsSection5Sub1Item2">Não comparecimento sem aviso prévio pode resultar em taxa de
+              no-show</li>
+            <li data-translate="termsSection5Sub1Item3">Remarcações são permitidas conforme disponibilidade</li>
+          </ul>
 
-            <section>
-                <h2 data-translate="termsSection5Title">5. Agendamento de Consultas</h2>
-                <h3 data-translate="termsSection5Sub1Title">5.1 Política de Cancelamento</h3>
-                <ul>
-                    <li data-translate="termsSection5Sub1Item1">Cancelamentos devem ser feitos com pelo menos 24 horas de antecedência</li>
-                    <li data-translate="termsSection5Sub1Item2">Não comparecimento sem aviso prévio pode resultar em taxa de no-show</li>
-                    <li data-translate="termsSection5Sub1Item3">Remarcações são permitidas conforme disponibilidade</li>
-                </ul>
+          <h3 data-translate="termsSection5Sub2Title">5.2 Emergências</h3>
+          <p data-translate="termsSection5Sub2Text">Para emergências odontológicas, entre em contato imediatamente. Nos
+            esforçamos para atender emergências no mesmo dia quando possível.</p>
+        </section>
 
-                <h3 data-translate="termsSection5Sub2Title">5.2 Emergências</h3>
-                <p data-translate="termsSection5Sub2Text">Para emergências odontológicas, entre em contato imediatamente. Nos esforçamos para atender emergências no mesmo dia quando possível.</p>
-            </section>
+        <section>
+          <h2 data-translate="termsSection6Title">6. Pagamentos e Políticas Financeiras</h2>
+          <ul>
+            <li data-translate="termsSection6Item1">Pagamento é devido no momento do serviço, salvo acordos específicos
+            </li>
+            <li data-translate="termsSection6Item2">Aceitamos dinheiro, cartões de débito/crédito e PIX</li>
+            <li data-translate="termsSection6Item3">Orçamentos são válidos por 30 dias</li>
+            <li data-translate="termsSection6Item4">Planos de pagamento podem ser disponibilizados mediante análise</li>
+          </ul>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection6Title">6. Pagamentos e Políticas Financeiras</h2>
-                <ul>
-                    <li data-translate="termsSection6Item1">Pagamento é devido no momento do serviço, salvo acordos específicos</li>
-                    <li data-translate="termsSection6Item2">Aceitamos dinheiro, cartões de débito/crédito e PIX</li>
-                    <li data-translate="termsSection6Item3">Orçamentos são válidos por 30 dias</li>
-                    <li data-translate="termsSection6Item4">Planos de pagamento podem ser disponibilizados mediante análise</li>
-                </ul>
-            </section>
+        <section>
+          <h2 data-translate="termsSection7Title">7. Propriedade Intelectual</h2>
+          <p data-translate="termsSection7Text">Todo o conteúdo do site, incluindo textos, imagens, logos e design, é
+            propriedade da MyClinic e está protegido por leis de direitos autorais. O uso não autorizado é proibido.</p>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection7Title">7. Propriedade Intelectual</h2>
-                <p data-translate="termsSection7Text">Todo o conteúdo do site, incluindo textos, imagens, logos e design, é propriedade da MyClinic e está protegido por leis de direitos autorais. O uso não autorizado é proibido.</p>
-            </section>
+        <section>
+          <h2 data-translate="termsSection8Title">8. Limitação de Responsabilidade</h2>
+          <p data-translate="termsSection8Text">A MyClinic não será responsável por:</p>
+          <ul>
+            <li data-translate="termsSection8Item1">Danos indiretos ou consequenciais</li>
+            <li data-translate="termsSection8Item2">Perda de dados ou lucros</li>
+            <li data-translate="termsSection8Item3">Interrupções do site ou falhas técnicas</li>
+            <li data-translate="termsSection8Item4">Ações de terceiros</li>
+          </ul>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection8Title">8. Limitação de Responsabilidade</h2>
-                <p data-translate="termsSection8Text">A MyClinic não será responsável por:</p>
-                <ul>
-                    <li data-translate="termsSection8Item1">Danos indiretos ou consequenciais</li>
-                    <li data-translate="termsSection8Item2">Perda de dados ou lucros</li>
-                    <li data-translate="termsSection8Item3">Interrupções do site ou falhas técnicas</li>
-                    <li data-translate="termsSection8Item4">Ações de terceiros</li>
-                </ul>
-            </section>
+        <section>
+          <h2 data-translate="termsSection9Title">9. Privacidade</h2>
+          <p data-translate="termsSection9Text">O uso de suas informações pessoais é regido por nossa <a
+              href="privacy-policy.html" data-translate="termsSection9Link">Política de Privacidade</a>, que faz parte
+            integrante destes Termos de Uso.</p>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection9Title">9. Privacidade</h2>
-                <p data-translate="termsSection9Text">O uso de suas informações pessoais é regido por nossa <a href="privacy-policy.html" data-translate="termsSection9Link">Política de Privacidade</a>, que faz parte integrante destes Termos de Uso.</p>
-            </section>
+        <section>
+          <h2 data-translate="termsSection10Title">10. Modificações dos Termos</h2>
+          <p data-translate="termsSection10Text">Reservamos o direito de modificar estes Termos de Uso a qualquer
+            momento. As alterações entrarão em vigor imediatamente após a publicação no site.</p>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection10Title">10. Modificações dos Termos</h2>
-                <p data-translate="termsSection10Text">Reservamos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site.</p>
-            </section>
+        <section>
+          <h2 data-translate="termsSection11Title">11. Lei Aplicável</h2>
+          <p data-translate="termsSection11Text">Estes Termos de Uso são regidos pelas leis brasileiras. Qualquer
+            disputa será resolvida nos tribunais competentes de São Paulo, SP.</p>
+        </section>
 
-            <section>
-                <h2 data-translate="termsSection11Title">11. Lei Aplicável</h2>
-                <p data-translate="termsSection11Text">Estes Termos de Uso são regidos pelas leis brasileiras. Qualquer disputa será resolvida nos tribunais competentes de São Paulo, SP.</p>
-            </section>
+        <section>
+          <h2 data-translate="termsSection12Title">12. Contato</h2>
+          <p data-translate="termsSection12Text">Para questões sobre estes Termos de Uso, entre em contato:</p>
+          <ul>
+            <li data-translate="termsSection12Item1">E-mail: contato@myclinic.com</li>
+            <li data-translate="termsSection12Item2">Telefone: +55 (11) 1234-5678</li>
+            <li data-translate="termsSection12Item3">Endereço: Rua Example, 123 - São Paulo, SP</li>
+          </ul>
+        </section>
+      </div>
+  </main>
 
-            <section>
-                <h2 data-translate="termsSection12Title">12. Contato</h2>
-                <p data-translate="termsSection12Text">Para questões sobre estes Termos de Uso, entre em contato:</p>
-                <ul>
-                    <li data-translate="termsSection12Item1">E-mail: contato@myclinic.com</li>
-                    <li data-translate="termsSection12Item2">Telefone: +55 (11) 1234-5678</li>
-                    <li data-translate="termsSection12Item3">Endereço: Rua Example, 123 - São Paulo, SP</li>
-                </ul>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <div class="footer-logo">
-              <span class="footer-logo-text" data-translate="siteName"
-                >MyClinic Angola</span
-              >
-            </div>
-            <p class="footer-text" data-translate="footerText">
-              A MyClinic Angola é líder em cuidados dentários de excelência,
-              oferecendo tratamentos personalizados com tecnologia de ponta.
-            </p>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" aria-label="Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" aria-label="LinkedIn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="#" aria-label="YouTube"
-                ><i class="fab fa-youtube"></i
-              ></a>
-            </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="footer-logo-text" data-translate="siteName">MyClinic Angola</span>
           </div>
-          <div class="footer-col">
-            <h4 class="footer-title" data-translate="footerLinksTitle">
-              Links Rápidos
-            </h4>
-            <ul class="footer-links">
-              <li><a href="index.html" data-translate="navHome">Início</a></li>
-              <li><a href="index.html#about" data-translate="navAbout">Sobre Nós</a></li>
-              <li>
-                <a href="index.html#services" data-translate="navServices">Serviços</a>
-              </li>
-              <li>
-                <a href="index.html#contact" data-translate="navContact">Contacto</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-title" data-translate="footerServicesTitle">
-              Serviços
-            </h4>
-            <ul class="footer-links">
-              <li>
-                <a href="index.html#services" data-translate="service1Title"
-                  >Ortodontia</a
-                >
-              </li>
-              <li>
-                <a href="index.html#services" data-translate="service2Title"
-                  >Implantodontia</a
-                >
-              </li>
-              <li>
-                <a href="index.html#services" data-translate="service3Title"
-                  >Odontopediatria</a
-                >
-              </li>
-              <li>
-                <a href="index.html#services" data-translate="service4Title"
-                  >Dentisteria Estética</a
-                >
-              </li>
-              <li>
-                <a href="index.html#services" data-translate="service5Title"
-                  >Prótese Dentária</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-title" data-translate="footerContactTitle">
-              Contacto
-            </h4>
-            <ul class="footer-contact">
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Shopping Fortaleza - Piso 2</span>
-              </li>
-              <li>
-                <i class="fas fa-phone"></i>
-                <span>+244 928 616 519</span>
-              </li>
-              <li>
-                <i class="fas fa-envelope"></i>
-                <span>geral@myclinic.ao</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p data-translate="footerCopyright">
-            © <span class="current-year"></span> MyClinic Angola. Todos os direitos reservados.
+          <p class="footer-text" data-translate="footerText">
+            A MyClinic Angola é líder em cuidados dentários de excelência,
+            oferecendo tratamentos personalizados com tecnologia de ponta.
           </p>
-          <div class="footer-legal">
-            <a href="privacy-policy.html" data-translate="footerPrivacy"
-              >Política de Privacidade</a
-            >
-            <a href="terms-of-use.html" data-translate="footerTerms">Termos de Uso</a>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/odonto.myclinic" target="_blank" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/odonto.myclinic/" target="_blank" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4 class="footer-title" data-translate="footerLinksTitle">
+            Links Rápidos
+          </h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-translate="navHome">Início</a></li>
+            <li><a href="index.html#about" data-translate="navAbout">Sobre Nós</a></li>
+            <li>
+              <a href="index.html#services" data-translate="navServices">Serviços</a>
+            </li>
+            <li>
+              <a href="index.html#contact" data-translate="navContact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title" data-translate="footerServicesTitle">
+            Serviços
+          </h4>
+          <ul class="footer-links">
+            <li>
+              <a href="index.html#services" data-translate="service1Title">Ortodontia</a>
+            </li>
+            <li>
+              <a href="index.html#services" data-translate="service2Title">Implantodontia</a>
+            </li>
+            <li>
+              <a href="index.html#services" data-translate="service3Title">Odontopediatria</a>
+            </li>
+            <li>
+              <a href="index.html#services" data-translate="service4Title">Dentisteria Estética</a>
+            </li>
+            <li>
+              <a href="index.html#services" data-translate="service5Title">Prótese Dentária</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title" data-translate="footerContactTitle">
+            Contacto
+          </h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Shopping Fortaleza - Piso 2</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>+244 928 616 519</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>geral@myclinic.ao</span>
+            </li>
+          </ul>
+        </div>
       </div>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+      <div class="footer-bottom">
+        <p data-translate="footerCopyright">
+          © <span class="current-year"></span> MyClinic Angola. Todos os direitos reservados.
+        </p>
+        <div class="footer-legal">
+          <a href="privacy-policy.html" data-translate="footerPrivacy">Política de Privacidade</a>
+          <a href="terms-of-use.html" data-translate="footerTerms">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
