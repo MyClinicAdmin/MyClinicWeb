@@ -192,6 +192,11 @@ module.exports = async function (req, res) {
       message: "Pedido enviado com sucesso.",
     });
   } catch (e) {
-    return res.status(500).json({ success: false, message: "Falha no envio." });
+    console.error("SendGrid error:", e.response?.body || e.message || e);
+    return res.status(500).json({
+      success: false,
+      message: "Falha no envio.",
+      error: e.response?.body || e.message || e.toString(),
+    });
   }
 };
