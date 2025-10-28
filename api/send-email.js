@@ -186,12 +186,18 @@ module.exports = async function (req, res) {
   };
 
   try {
-    await sgMail.send(msg);
+    const result = await sgMail.send(msg);
     return res.status(200).json({
       success: true,
       message: "Pedido enviado com sucesso.",
     });
   } catch (e) {
+    console.log(
+      'Error:', e,
+      'Message:', msg,
+      'result: ', result,
+    );
+    
     return res.status(500).json({ success: false, message: "Falha no envio." });
   }
 };
